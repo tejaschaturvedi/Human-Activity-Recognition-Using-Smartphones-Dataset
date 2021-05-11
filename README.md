@@ -1,19 +1,78 @@
-# Human Activity Recognition Using Smartphones Dataset
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. 
-Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.
-Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+## Human Activity Recognition Using Smartphones Dataset
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). 
-The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+This project is to build a model that predicts the human activities such as Walking, Walking_Upstairs, Walking_Downstairs, Sitting, Standing or Laying.
 
-For each record it is provided:
-======================================
+This dataset is collected from 30 persons(referred as subjects in this dataset), performing different activities with a smartphone to their waists. The data is recorded with the help of sensors (accelerometer and Gyroscope) in that smartphone. This experiment was video recorded to label the data manually.
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
-- Triaxial Angular velocity from the gyroscope. 
-- A 561-feature vector with time and frequency domain variables. 
-- Its activity label. 
-- An identifier of the subject who carried out the experiment.
+**How data was recorded**
+
+By using the sensors(Gyroscope and accelerometer) in a smartphone, they have captured '3-axial linear acceleration'(_tAcc-XYZ_) from accelerometer and '3-axial angular velocity' (_tGyro-XYZ_) from Gyroscope with several variations.
+
+- prefix 't' in those metrics denotes time.
+
+- suffix 'XYZ' represents 3-axial signals in X , Y, and Z directions.
+
+**Feature names**
+
+1) These sensor signals are preprocessed by applying noise filters and then sampled in fixed-width windows(sliding windows) of 2.56 seconds each with 50% overlap. ie., each window has 128 readings.
+
+2) From Each window, a feature vector was obtianed by calculating variables from the time and frequency domain.
+
+3) In our dataset, each datapoint represents a window with different readings
+
+4) The accelertion signal was saperated into Body and Gravity acceleration signals(tBodyAcc-XYZ and tGravityAcc-XYZ) using some low pass filter with corner frequecy of 0.3Hz.
+
+5) After that, the body linear acceleration and angular velocity were derived in time to obtian jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ).
+
+6) The magnitude of these 3-dimensional signals were calculated using the Euclidian norm. This magnitudes are represented as features with names like tBodyAccMag_, _tGravityAccMag_, _tBodyAccJerkMag_, _tBodyGyroMag and tBodyGyroJerkMag.
+
+7) Finally, We've got frequency domain signals from some of the available signals by applying a FFT (Fast Fourier Transform). These signals obtained were labeled with prefix 'f' just like original signals with prefix 't'. These signals are labeled as fBodyAcc-XYZ, fBodyGyroMag etc.,.
+
+8) These are the signals that we got so far.
+
+- tBodyAcc-XYZ
+- tGravityAcc-XYZ
+- tBodyAccJerk-XYZ
+- tBodyGyro-XYZ
+- tBodyGyroJerk-XYZ
+- tBodyAccMag
+
+- tGravityAccMag
+- tBodyAccJerkMag
+- tBodyGyroMag
+- tBodyGyroJerkMag
+- fBodyAcc-XYZ
+- fBodyAccJerk-XYZ
+- fBodyGyro-XYZ
+- fBodyAccMag
+- fBodyAccJerkMag
+- fBodyGyroMag
+- fBodyGyroJerkMag
+
+We can esitmate some set of variables from the above signals. ie., We will estimate the following properties on each and every signal that we recoreded so far.
+
+- mean(): Mean value
+- std(): Standard deviation
+- mad(): Median absolute deviation
+- max(): Largest value in array
+- min(): Smallest value in array
+- iqr(): Interquartile range
+- correlation(): correlation coefficient between two signals
+- skewness(): skewness of the frequency domain signal
+- kurtosis(): kurtosis of the frequency domain signal
+
+We can obtain some other vectors by taking the average of signals in a single window sample.
+
+In the dataset, Y_labels are represented as numbers from 1 to 6 as their identifiers.
+
+WALKING as 1
+WALKING_UPSTAIRS as 2
+WALKING_DOWNSTAIRS as 3
+SITTING as 4
+STANDING as 5
+LAYING as 6
+Train and test data were saperated
+The readings from 70% of the volunteers were taken as trianing data and remaining 30% subjects recordings were taken for test data
 
 The dataset includes the following files:
 =========================================
@@ -21,7 +80,7 @@ The dataset includes the following files:
 **All the files are available at:** https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones
 - 'README.txt'
 
-- 'features_info.txt': Shows information about the variables used on the feature vector.
+'features_info.txt': Shows information about the variables used on the feature vector.
 
 - 'features.txt': List of all features.
 
