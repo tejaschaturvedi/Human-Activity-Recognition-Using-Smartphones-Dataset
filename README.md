@@ -63,14 +63,15 @@ We can esitmate some set of variables from the above signals. ie., We will estim
 
 We can obtain some other vectors by taking the average of signals in a single window sample.
 
-In the dataset, Y_labels are represented as numbers from 1 to 6 as their identifiers.
+In the dataset, Y_labels are represented as numbers from 1 to 6 as their identifiers:
 
-WALKING as 1
-WALKING_UPSTAIRS as 2
-WALKING_DOWNSTAIRS as 3
-SITTING as 4
-STANDING as 5
-LAYING as 6
+- WALKING as 1
+- WALKING_UPSTAIRS as 2
+- WALKING_DOWNSTAIRS as 3
+- SITTING as 4
+- STANDING as 5
+- LAYING as 6
+
 Train and test data were saperated
 The readings from 70% of the volunteers were taken as trianing data and remaining 30% subjects recordings were taken for test data
 
