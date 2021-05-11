@@ -1,5 +1,5 @@
-# Cancer-Detection
-Detecting Cancer using machine learning techniques | 9 Class classification problem
+# Human Activity Recognition
+6 Class classification problem
 
 
 Human Activity Recognition Using Smartphones Dataset
