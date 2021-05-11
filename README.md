@@ -23,6 +23,7 @@ For each record it is provided:
 The dataset includes the following files:
 =========================================
 
+**All the files are available at:** https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones
 - 'README.txt'
 
 - 'features_info.txt': Shows information about the variables used on the feature vector.
